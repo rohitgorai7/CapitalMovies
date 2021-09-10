@@ -1,4 +1,4 @@
-CapitalMoviesLive Website [Link](https://capital-movies.netlify.app/)
+CapitalMovies - Live Website [Link](https://capital-movies.netlify.app/)
 
 # Getting Started with Create React App
 
