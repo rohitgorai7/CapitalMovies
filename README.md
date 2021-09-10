@@ -130,3 +130,5 @@ This should return some JSON, and within it the id which is your account_id:
     "include_adult": true,
     "username": "meme"
 }
+
+# (Important)Also, It does not matter how many accounts you create in this App, all the Favourites movies will be same no matter which account you are are logged in beacause we are the one same Favourites API for all the users.
