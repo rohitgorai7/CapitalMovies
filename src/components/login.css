@@ -1,0 +1,16 @@
+@media all {
+    .login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 50px;
+      margin: 0 auto;
+      max-width: 320px;
+    }  
+  }
+
+  .loginBtn{
+    width: 100px;
+    height: 35px;
+  }
