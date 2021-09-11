@@ -1,5 +1,68 @@
 CapitalMovies - Live Website [Link](https://capital-movies.netlify.app/)
 
+# For Creating Login Authentication using Firebase
+
+Create New Project
+
+Then Create Login Authentication using Email and Password
+
+Copy the CDN to your React Project, Here I have made fire.js inside my /src/components for my the Firebase API
+
+# To Use The Movie DB API
+
+Create Account
+
+Go to API
+
+Now go to Developers
+
+You Need to get Popular, Latest, Favourite Movies from TMDB API
+
+For the Favourites Movie You need Account_ID
+
+1. Get your Request Token [docs](https://api.themoviedb.org/3/authentication/token/new?api_key=blahblahblah)
+
+Plug that URL into Postman as a GET request and run it.
+
+You should now have your Request Token.
+
+2. Create your [session_id](https://api.themoviedb.org/3/authentication/session/new?api_key=blahblahblah)
+
+Add that to Postman as a POST Request. Also within Postman's Body tab, you need to add your request_token as raw JSON.
+
+It will look something like the following:
+
+{
+  "request_token": "xxxxxxxxxxxxxx"
+}
+Run the request and should get back your session_id.
+
+3. Retrieve your account details [docs](https://api.themoviedb.org/3/account?api_key=blahblahblah&session_id=xxxxxxxxxxx)
+Back in Postman add your URL as GET request.
+
+
+This should return some JSON, and within it the id which is your account_id:
+
+{
+    "avatar": {
+        "gravatar": {
+            "hash": "00000000000000000"
+        },
+        "tmdb": {
+            "avatar_path": null
+        }
+    },
+    "id": 1234567,
+    "iso_639_1": "en",
+    "iso_3166_1": "US",
+    "name": "",
+    "include_adult": true,
+    "username": "meme"
+}
+
+# (Important)Also, It does not matter how many accounts you create in this App, all the Favourites movies will be same no matter which account you are are logged in beacause we are the one same Favourites API for all the users.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -71,64 +134,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-# For Creating Login Authentication using Firebase
-
-Create New Project
-
-Then Create Login Authentication using Email and Password
-
-Copy the CDN to your React Project, Here I have made fire.js inside my /src/components for my the Firebase API
-
-# To Use The Movie DB API
-
-Create Account
-
-Go to API
-
-Now go to Developers
-
-You Need to get Popular, Latest, Favourite Movies from TMDB API
-
-For the Favourites Movie You need Account_ID
-
-1. Get your Request Token [docs](https://api.themoviedb.org/3/authentication/token/new?api_key=blahblahblah)
-
-Plug that URL into Postman as a GET request and run it.
-
-You should now have your Request Token.
-
-2. Create your [session_id](https://api.themoviedb.org/3/authentication/session/new?api_key=blahblahblah)
-
-Add that to Postman as a POST Request. Also within Postman's Body tab, you need to add your request_token as raw JSON.
-
-It will look something like the following:
-
-{
-  "request_token": "xxxxxxxxxxxxxx"
-}
-Run the request and should get back your session_id.
-
-3. Retrieve your account details [docs](https://api.themoviedb.org/3/account?api_key=blahblahblah&session_id=xxxxxxxxxxx)
-Back in Postman add your URL as GET request.
-
-
-This should return some JSON, and within it the id which is your account_id:
-
-{
-    "avatar": {
-        "gravatar": {
-            "hash": "00000000000000000"
-        },
-        "tmdb": {
-            "avatar_path": null
-        }
-    },
-    "id": 1234567,
-    "iso_639_1": "en",
-    "iso_3166_1": "US",
-    "name": "",
-    "include_adult": true,
-    "username": "meme"
-}
-
-# (Important)Also, It does not matter how many accounts you create in this App, all the Favourites movies will be same no matter which account you are are logged in beacause we are the one same Favourites API for all the users.
